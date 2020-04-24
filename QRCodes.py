@@ -2,6 +2,7 @@
 # Note: be sure to have pyqrcode, pypng, and qrtools installed
 
 #script for creating and reading QR codes
+# NOTE: problems with zbar on mac related to .bashrc and zbar.h
 
 import pyqrcode
 import qrtools
